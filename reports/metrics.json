@@ -1,0 +1,18 @@
+{
+  "data": "one synthetic trajectory, metres and seconds",
+  "assumptions": "constant g; no air resistance",
+  "seed": 42,
+  "noise_std_metres": 0.08,
+  "n_train": 40,
+  "n_test": 21,
+  "last_train_time_seconds": 1.1700000000000002,
+  "first_test_time_seconds": 1.2000000000000002,
+  "linear_test_mae_metres": 3.700063748888535,
+  "quadratic_test_mae_metres": 0.05665384268099395,
+  "quadratic_vs_true_test_mae_metres": 0.037530463265085454,
+  "estimated_initial_height_metres": 1.4728258202399314,
+  "estimated_initial_velocity_m_s": 8.114915275465728,
+  "estimated_g_m_s2": 9.970078139906798,
+  "simulated_g_m_s2": 9.81,
+  "sklearn_version": "1.8.0"
+}
