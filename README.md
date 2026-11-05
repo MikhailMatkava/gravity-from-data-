@@ -54,14 +54,6 @@ python -m unittest discover -s tests -v
 
 Результаты при `seed=42` — в [reports/metrics.json](reports/metrics.json). При смене шума и seed метрики могут измениться.
 
-## Что попробовать самому
-
-1. Запусти `python train.py --seed 7 --output artifacts/seed7` и сравни оценки g.
-2. Запусти `python train.py --noise-std 0 --output artifacts/no-noise`. Оцени, что останется от ошибки прямой.
-3. Измени `split = 40` на `split = 30` и проверь, как изменится ошибка на позднем участке. Не выбирай split по лучшей test-метрике.
-4. Попробуй несколько seed и оцени разброс g. Это разные симуляции одной модели, не реальные независимые опыты.
-
-
 ## Файлы
 
 | Файл | Назначение |
