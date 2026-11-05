@@ -1,4 +1,4 @@
-"""Fit two regressions, evaluate later times, and save a reproducible report."""
+"""Fit and compare linear and quadratic trajectory models."""
 
 import argparse
 import json
@@ -20,7 +20,7 @@ def run(output="artifacts", seed=42, noise_std=0.08):
     output.mkdir(parents=True, exist_ok=True)
     time, measured, true_height = simulate(seed=seed, noise_std=noise_std)
 
-    # Chronological split: train on early measurements, test extrapolation.
+    # Test on later times to measure extrapolation.
     split = 40
     early, later = slice(0, split), slice(split, None)
     straight = LinearRegression().fit(features(time[early]), measured[early])
@@ -28,7 +28,7 @@ def run(output="artifacts", seed=42, noise_std=0.08):
     linear_pred = straight.predict(features(time[later]))
     physics_pred = curved.predict(features(time[later], quadratic=True))
 
-    # h(t) = a + b*t + c*t^2; comparison with a + v0*t - g*t^2/2.
+    # c = -g/2 in h(t) = a + b*t + c*t².
     initial_height = float(curved.intercept_)
     initial_velocity = float(curved.coef_[0])
     estimated_g = float(-2 * curved.coef_[1])

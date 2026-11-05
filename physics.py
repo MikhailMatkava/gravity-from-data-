@@ -1,14 +1,10 @@
-"""Synthetic height measurements and two simple feature representations."""
+"""Simulated trajectory and regression features."""
 
 import numpy as np
 
 
 def simulate(seed=42, noise_std=0.08):
-    """Return time, noisy height and noiseless height for one idealized flight.
-
-    Units: seconds and metres. Air resistance is ignored. The formula may
-    extend below ground; the chosen observation interval ends before impact.
-    """
+    """Time (s), noisy height (m), and ideal height (m)."""
     if noise_std < 0:
         raise ValueError("noise_std must be non-negative")
     time = np.linspace(0.0, 1.8, 61)
@@ -19,7 +15,7 @@ def simulate(seed=42, noise_std=0.08):
 
 
 def features(time, quadratic=False):
-    """Turn a sequence of times into a two-dimensional ML feature matrix."""
+    """Build [t] or [t, t²] features."""
     time = np.asarray(time, dtype=float)
     if time.ndim != 1:
         raise ValueError("time must be a one-dimensional sequence")
