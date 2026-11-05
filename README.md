@@ -25,7 +25,7 @@ h(t) = h0 + v0*t - (g/2)*t².
 
 ## Запуск
 
-Нужен Python 3.12. Выполняй команды из папки проекта:
+Нужен Python 3.12. 
 
 ```bash
 python -m venv .venv
@@ -33,7 +33,6 @@ python -m venv .venv
 # macOS / Linux: .venv/bin/python -m pip install -r requirements.txt
 ```
 
-Ниже `python` означает интерпретатор созданного окружения. Без активации укажи к нему полный путь, как в командах выше.
 
 ```bash
 python train.py
@@ -62,7 +61,6 @@ python -m unittest discover -s tests -v
 3. Измени `split = 40` на `split = 30` и проверь, как изменится ошибка на позднем участке. Не выбирай split по лучшей test-метрике.
 4. Попробуй несколько seed и оцени разброс g. Это разные симуляции одной модели, не реальные независимые опыты.
 
-[Задания на проверку объяснений](REVIEW_EXERCISES.md) посвящены типичным ошибкам в формулах и выводах.
 
 ## Файлы
 
@@ -72,9 +70,6 @@ python -m unittest discover -s tests -v
 | `train.py` | Обучение, разбиение, MAE, график и сохранение коэффициентов |
 | `predict.py` | Расчёт высоты в заданный момент по JSON |
 | `tests/test_project.py` | Проверки форм, воспроизводимости и точного случая без шума |
-| `REVIEW_EXERCISES.md` | Тренировка оценки математических и физических объяснений |
 | `reports/` | Результат исходного запуска |
-
-Учебный код подготовлен с AI-помощником.
 
 Документация: [LinearRegression](https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LinearRegression.html), [train_test_split](https://scikit-learn.org/1.8/modules/generated/sklearn.model_selection.train_test_split.html) (в коде разделение выполнено срезами, чтобы подчеркнуть порядок во времени).
