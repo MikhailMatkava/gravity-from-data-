@@ -63,5 +63,6 @@ python -m unittest discover -s tests -v
 | `predict.py` | Расчёт высоты в заданный момент по JSON |
 | `tests/test_project.py` | Проверки форм, воспроизводимости и точного случая без шума |
 | `reports/` | Результат исходного запуска |
+| `explore.py`, `EXPERIMENTS.md` | Оценка разброса результатов при разных seed |
 
 Документация: [LinearRegression](https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LinearRegression.html), [train_test_split](https://scikit-learn.org/1.8/modules/generated/sklearn.model_selection.train_test_split.html) (в коде разделение выполнено срезами, чтобы подчеркнуть порядок во времени).
